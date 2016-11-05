@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Healthathon</string>
+    <string name="app_name">miPA</string>
 
     <!-- Menu Items -->
     <string name="home">Inicio</string>
