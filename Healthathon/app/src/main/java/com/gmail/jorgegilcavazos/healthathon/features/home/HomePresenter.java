@@ -2,7 +2,7 @@ package com.gmail.jorgegilcavazos.healthathon.features.home;
 
 public class HomePresenter implements HomeContract.UserActionListener {
 
-    private final HomeContract.View homeView;
+    private HomeContract.View homeView;
 
     public HomePresenter(HomeContract.View view) {
         homeView = view;
@@ -10,7 +10,9 @@ public class HomePresenter implements HomeContract.UserActionListener {
 
     @Override
     public void startMeasurement() {
-
+        if (homeView != null) {
+            homeView.showMeasurement();
+        }
     }
 
     @Override
@@ -36,5 +38,10 @@ public class HomePresenter implements HomeContract.UserActionListener {
     @Override
     public void loadAdvice() {
 
+    }
+
+    @Override
+    public void detachView() {
+        homeView = null;
     }
 }

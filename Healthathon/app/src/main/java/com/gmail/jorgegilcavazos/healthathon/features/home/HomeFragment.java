@@ -1,5 +1,6 @@
 package com.gmail.jorgegilcavazos.healthathon.features.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.gmail.jorgegilcavazos.healthathon.R;
+import com.gmail.jorgegilcavazos.healthathon.features.measure.MeasureActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,9 +53,21 @@ public class HomeFragment extends Fragment implements HomeContract.View {
     }
 
     @Override
+    public void onDetach() {
+        super.onDetach();
+        actionListener.detachView();
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void showMeasurement() {
+        Intent intent = new Intent(getActivity(), MeasureActivity.class);
+        startActivity(intent);
     }
 
     @Override

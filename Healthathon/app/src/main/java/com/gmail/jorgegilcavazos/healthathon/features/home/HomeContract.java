@@ -6,6 +6,8 @@ package com.gmail.jorgegilcavazos.healthathon.features.home;
 public class HomeContract {
 
     interface View {
+        void showMeasurement();
+
         void showBloodPressure();
 
         void showHeartRate();
@@ -29,5 +31,7 @@ public class HomeContract {
         void loadReminders();
 
         void loadAdvice();
+
+        void detachView();
     }
 }
