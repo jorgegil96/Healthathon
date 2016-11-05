@@ -5,14 +5,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.gmail.jorgegilcavazos.healthathon.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class HomeFragment extends Fragment implements HomeContract.View {
 
+    private HomeContract.UserActionListener actionListener;
+
+    @BindView(R.id.btn_blood_pressure) Button btnMeasure;
     private Unbinder unbinder;
 
     public HomeFragment() {
@@ -27,6 +32,7 @@ public class HomeFragment extends Fragment implements HomeContract.View {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        actionListener = new HomePresenter(this);
     }
 
     @Override
@@ -35,6 +41,12 @@ public class HomeFragment extends Fragment implements HomeContract.View {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         unbinder = ButterKnife.bind(this, view);
 
+        btnMeasure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actionListener.startMeasurement();
+            }
+        });
         return view;
     }
 
