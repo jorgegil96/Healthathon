@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Healthathon</string>
+
+    <!-- Menu Items -->
+    <string name="home">Inicio</string>
+    <string name="blood_pressure">Presión Arterial</string>
+    <string name="heart_rate">Frecuencia Cardiaca</string>
+    <string name="reminders">Recordatorios</string>
+    <string name="advice">Consejos</string>
+    <string name="settings">Ajustes</string>
+
+    <string name="steps">Pasos</string>
+
+</resources>
