@@ -2,19 +2,16 @@ package com.gmail.jorgegilcavazos.healthathon.features.home;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.gmail.jorgegilcavazos.healthathon.R;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements HomeContract.View {
 
     private Unbinder unbinder;
 
@@ -38,8 +35,37 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         unbinder = ButterKnife.bind(this, view);
 
-
         return view;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+    @Override
+    public void showBloodPressure() {
+
+    }
+
+    @Override
+    public void showHeartRate() {
+
+    }
+
+    @Override
+    public void showSteps() {
+
+    }
+
+    @Override
+    public void showReminders() {
+
+    }
+
+    @Override
+    public void showAdvice() {
+
+    }
 }
