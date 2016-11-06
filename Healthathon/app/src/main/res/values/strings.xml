@@ -11,5 +11,8 @@
 
     <string name="steps">Pasos</string>
     <string name="measure">Medir</string>
+    <string name="start">Iniciar</string>
+    <string name="restart">Reiniciar</string>
+    <string name="cancel">Cancelar</string>
 
 </resources>
