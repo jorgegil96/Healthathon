@@ -1,5 +1,7 @@
 package com.gmail.jorgegilcavazos.healthathon.features.home;
 
+import com.github.mikephil.charting.data.BarData;
+
 /**
  * Contract specification between the {@link HomeFragment} and the {@link HomePresenter}.
  */
@@ -14,6 +16,8 @@ public class HomeContract {
 
         void showSteps();
 
+        void showStepChart(BarData data);
+
         void showReminders();
 
         void showAdvice();
@@ -27,6 +31,8 @@ public class HomeContract {
         void loadHeartRate();
 
         void loadSteps();
+
+        void loadStepChart();
 
         void loadReminders();
 
